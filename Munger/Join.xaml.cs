@@ -23,11 +23,32 @@ namespace Munger
             var transforms = new List<StringTransform>();
             transforms.Add(new LineExtractor());
             transforms.Add(new RemoveEmpty());
+            if (!string.IsNullOrWhiteSpace(txtRegex.Text))
+            {
+                var rxMatch = new RegexMatch();
+                rxMatch.RegexString = txtRegex.Text.Trim();
+                if (!string.IsNullOrWhiteSpace(txtRegexGroup.Text))
+                {
+                    var group = txtRegexGroup.Text.Trim();
+                    int groupPosition;
+                    var iSgroupNum = int.TryParse(group, out groupPosition);
+                    if (iSgroupNum)
+                        rxMatch.GroupPosition = groupPosition;
+                    else
+                        rxMatch.GroupName = group;
+                }
+                transforms.Add(rxMatch);
+            }
+
+
+
+
+
             transforms.Add(new Trim());
 
             var items = transforms.Transform(txtSource.Text);
 
-            var text = StringJoin( items, txtPrefix.Text, txtItemDelimiter.Text, txtSuffix.Text);
+            var text = StringJoin(items, txtPrefix.Text, txtItemDelimiter.Text, txtSuffix.Text);
             txtResults.Text = text;
         }
 
@@ -41,5 +62,7 @@ namespace Munger
 
             return sb.ToString();
         }
+
+
     }
 }

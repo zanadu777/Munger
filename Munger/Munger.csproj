@@ -60,6 +60,7 @@
     <Compile Include="Extensions\Trim.cs" />
     <Compile Include="StringTransform.cs" />
     <Compile Include="Transforms\LineExtractor.cs" />
+    <Compile Include="Transforms\RegexMatch.cs" />
     <Compile Include="Transforms\RemoveEmpty.cs" />
     <Page Include="Join.xaml">
       <SubType>Designer</SubType>

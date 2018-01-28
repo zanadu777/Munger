@@ -5,24 +5,34 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Munger"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="600">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition Width="63*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30*"/>
+            <RowDefinition Height="47.535"/>
+            <RowDefinition Height="29.641"/>
+            <RowDefinition Height="82.359"/>
             <RowDefinition Height="5"/>
             <RowDefinition Height="44*"/>
         </Grid.RowDefinitions>
 
-        <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></GridSplitter>
+        <GridSplitter Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2"></GridSplitter>
 
-        <TextBox x:Name="txtSource"    TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,50,20,0" Height="65" AcceptsReturn="True" AcceptsTab="True"/>
-        <TextBox x:Name="txtResults"  Grid.Row="2" TextWrapping="Wrap" Text=""  />
-        <Button Content="Join" HorizontalAlignment="right" Margin="4" VerticalAlignment="Top" Width="31" Click="Button_Click"/>
+        <TextBox x:Name="txtSource"    TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="0"  AcceptsReturn="True" AcceptsTab="True" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtResults"  Grid.Row="4" TextWrapping="Wrap" Text="" Grid.ColumnSpan="2"  />
+        <Button Content="Join" HorizontalAlignment="right" Margin="0,4,4,0" VerticalAlignment="Top" Width="31" Click="Button_Click" Grid.Column="1"/>
         <TextBox x:Name="txtItemDelimiter" HorizontalAlignment="Left" Height="23" Margin="50,22,0,0" TextWrapping="Wrap" Text="," VerticalAlignment="Top" Width="20"   RenderTransformOrigin="0.534,1.379"/>
         <TextBlock HorizontalAlignment="Left" Margin="35,4,0,0" TextWrapping="Wrap" Text="Deliminator" VerticalAlignment="Top"/>
         <TextBox x:Name="txtPrefix" HorizontalAlignment="Left" Height="23" Margin="10,22,0,0" TextWrapping="Wrap" Text="'" VerticalAlignment="Top" Width="20"   RenderTransformOrigin="0.534,1.379"/>
         <TextBox x:Name="txtSuffix" HorizontalAlignment="Left" Height="23" Margin="102,22,0,0" TextWrapping="Wrap" Text="'" VerticalAlignment="Top" Width="20"   RenderTransformOrigin="0.534,1.379"/>
         <TextBlock HorizontalAlignment="Left" Margin="0,4,0,0" TextWrapping="Wrap" Text="Prefix" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="102,4,0,0" TextWrapping="Wrap" Text="Suffix" VerticalAlignment="Top" RenderTransformOrigin="4.838,0.559"/>
+        <TextBox x:Name="txtRegex" HorizontalAlignment="Stretch" Height="23" Margin="47,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top"   Grid.Row="1" Text="value=&quot;(?&lt;value&gt;.*)&quot;"/>
+        <TextBox x:Name="txtRegexGroup" HorizontalAlignment="Left" Height="23" Margin="44,2,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Grid.Column="1" Text="value"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Regex" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="5.556,9,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Group" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.52,-0.03"/>
     </Grid>
 </UserControl>
