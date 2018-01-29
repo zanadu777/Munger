@@ -5,15 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Munger"
         mc:Ignorable="d"
-        Title="Munger" Height="350" Width="525">
+        Title="Munger" Height="350" Width="640" Loaded="MainWindow_OnLoaded">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="56*"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="456*"/>
         </Grid.ColumnDefinitions>
         <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></GridSplitter>
-        <local:Join Grid.Column="2" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  />
+        <ContentControl x:Name="contentWorkArea" Grid.Column="2" >
+            <local:Join Grid.Column="2" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  />
+        </ContentControl>
+        <ListBox x:Name="lstAreas" DisplayMemberPath="Name" SelectionChanged="lstAreas_SelectionChanged" />
+
 
     </Grid>
 </Window>

@@ -24,15 +24,18 @@
         <TextBox x:Name="txtSource"    TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="0"  AcceptsReturn="True" AcceptsTab="True" Grid.Row="2" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txtResults"  Grid.Row="4" TextWrapping="Wrap" Text="" Grid.ColumnSpan="2"  />
         <Button Content="Join" HorizontalAlignment="right" Margin="0,4,4,0" VerticalAlignment="Top" Width="31" Click="Button_Click" Grid.Column="1"/>
-        <TextBox x:Name="txtItemDelimiter" HorizontalAlignment="Left" Height="23" Margin="50,22,0,0" TextWrapping="Wrap" Text="," VerticalAlignment="Top" Width="20"   RenderTransformOrigin="0.534,1.379"/>
-        <TextBlock HorizontalAlignment="Left" Margin="35,4,0,0" TextWrapping="Wrap" Text="Deliminator" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPrefix" HorizontalAlignment="Left" Height="23" Margin="10,22,0,0" TextWrapping="Wrap" Text="'" VerticalAlignment="Top" Width="20"   RenderTransformOrigin="0.534,1.379"/>
-        <TextBox x:Name="txtSuffix" HorizontalAlignment="Left" Height="23" Margin="102,22,0,0" TextWrapping="Wrap" Text="'" VerticalAlignment="Top" Width="20"   RenderTransformOrigin="0.534,1.379"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0,4,0,0" TextWrapping="Wrap" Text="Prefix" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="102,4,0,0" TextWrapping="Wrap" Text="Suffix" VerticalAlignment="Top" RenderTransformOrigin="4.838,0.559"/>
+        <TextBox x:Name="txtItemDelimiter" HorizontalAlignment="Left" Height="23" Margin="177,1,0,0" TextWrapping="Wrap" Text="," VerticalAlignment="Top" Width="20"   RenderTransformOrigin="0.534,1.379"/>
+        <TextBlock HorizontalAlignment="Left" Margin="110,4,0,0" TextWrapping="Wrap" Text="Deliminator" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPrefix" HorizontalAlignment="Left" Height="23" Margin="80,1,0,0" TextWrapping="Wrap" Text="'" VerticalAlignment="Top" Width="20"    />
+        <TextBox x:Name="txtSuffix" HorizontalAlignment="Left" Height="23" Margin="240,1,0,0" TextWrapping="Wrap" Text="'" VerticalAlignment="Top" Width="20"   />
+        <TextBlock HorizontalAlignment="Left" Margin="47,4,0,0" TextWrapping="Wrap" Text="Prefix" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="202,4,0,0" TextWrapping="Wrap" Text="Suffix" VerticalAlignment="Top" RenderTransformOrigin="4.838,0.559"/>
         <TextBox x:Name="txtRegex" HorizontalAlignment="Stretch" Height="23" Margin="47,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top"   Grid.Row="1" Text="value=&quot;(?&lt;value&gt;.*)&quot;"/>
         <TextBox x:Name="txtRegexGroup" HorizontalAlignment="Left" Height="23" Margin="44,2,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" Grid.Column="1" Text="value"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Regex" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="5.556,9,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Group" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.52,-0.03"/>
+        <TextBlock HorizontalAlignment="Left" Margin="5.556,9,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Group" VerticalAlignment="Top" Grid.Column="1" />
+        <TextBox x:Name="txtPerline" HorizontalAlignment="Left" Height="23" Margin="274,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
+        <TextBlock HorizontalAlignment="Left" Margin="229,29,0,0" TextWrapping="Wrap" Text="per line" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="9,4,0,0" TextWrapping="Wrap" Text="Item:" VerticalAlignment="Top" FontWeight="Bold"/>
     </Grid>
 </UserControl>

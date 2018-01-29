@@ -9,6 +9,8 @@ namespace Munger.Transforms
         {
             var lines = new List<string>();
 
+            if (text == null)
+                return lines;
 
             using (var sr = new StringReader(text))
             {

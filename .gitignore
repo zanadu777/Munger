@@ -41,3 +41,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/Munger/bin/Debug
+/Munger/obj/Debug
+/MungerTests/obj/Debug
+/MungerTests/bin/Debug

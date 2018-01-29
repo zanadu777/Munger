@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -48,12 +49,39 @@ namespace Munger
 
             var items = transforms.Transform(txtSource.Text);
 
-            var text = StringJoin(items, txtPrefix.Text, txtItemDelimiter.Text, txtSuffix.Text);
-            txtResults.Text = text;
+
+
+            var perLine = ToInt(txtPerline.Text);
+            if (perLine.HasValue && perLine.Value > 0)
+            {
+                var bins = items.ToBins(perLine.Value);
+                var  sb = new StringBuilder();
+                foreach (var bin in bins)
+                {
+                    var text = StringJoin(bin, txtPrefix.Text, txtItemDelimiter.Text, txtSuffix.Text);
+                    sb.AppendLine(text);
+                }
+
+                txtResults.Text = sb.ToString();
+            }
+            else
+            {
+                var text = StringJoin(items, txtPrefix.Text, txtItemDelimiter.Text, txtSuffix.Text);
+                txtResults.Text = text;
+            }
+
+
+
+
         }
 
-        private string StringJoin(IEnumerable<string> items, string itemprefix, string itemdelimiter, string itemSuffix)
+        private string StringJoin(IEnumerable<string> enumerable, string itemprefix, string itemdelimiter, string itemSuffix)
         {
+            var items = enumerable.ToList();
+            if (!items.Any())
+                return "";
+
+
             StringBuilder sb = new StringBuilder();
             var fAndR = new FirstAndRemainder<string>(items);
             sb.Append($"{itemprefix}{fAndR.First}{itemSuffix}");
@@ -61,6 +89,16 @@ namespace Munger
                 sb.Append($"{itemdelimiter}{itemprefix}{item}{itemSuffix}");
 
             return sb.ToString();
+        }
+
+        private int? ToInt(string text)
+        {
+            int? intVal = null;
+
+            if (int.TryParse(text, out var value))
+                intVal = value;
+
+            return intVal;
         }
 
 

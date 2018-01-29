@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Munger
 {
@@ -23,6 +11,23 @@ namespace Munger
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        readonly ObservableCollection<WorkArea> workAreas = new ObservableCollection<WorkArea>();
+        private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            workAreas.Add(new WorkArea {Name = "Join", Control= new Join() });
+            workAreas.Add(new WorkArea { Name = "Compare", Control = new Compare() });
+            lstAreas.ItemsSource = workAreas;
+            lstAreas.SelectedIndex = 0;
+        }
+
+        private void lstAreas_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            var selected = (WorkArea)e.AddedItems[0];
+            contentWorkArea.Content = selected.Control;
+
+
         }
     }
 }
