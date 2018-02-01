@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:Munger"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary   Source="Resources/Colors.xaml" />
+                <ResourceDictionary  Source="Resources/CommandButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

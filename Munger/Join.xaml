@@ -19,11 +19,14 @@
             <RowDefinition Height="44*"/>
         </Grid.RowDefinitions>
 
-        <GridSplitter Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2"></GridSplitter>
+        <GridSplitter Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Background="{StaticResource SplitterBrush}"/>
 
         <TextBox x:Name="txtSource"    TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="0"  AcceptsReturn="True" AcceptsTab="True" Grid.Row="2" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txtResults"  Grid.Row="4" TextWrapping="Wrap" Text="" Grid.ColumnSpan="2"  />
-        <Button Content="Join" HorizontalAlignment="right" Margin="0,4,4,0" VerticalAlignment="Top" Width="31" Click="Button_Click" Grid.Column="1"/>
+        <Button Content="Join" HorizontalAlignment="right" Margin="0,4,4,0" VerticalAlignment="Top" 
+               
+
+                Width="31" Click="Button_Click" Grid.Column="1" Style="{DynamicResource CommandButtonStyle}"/>
         <TextBox x:Name="txtItemDelimiter" HorizontalAlignment="Left" Height="23" Margin="177,1,0,0" TextWrapping="Wrap" Text="," VerticalAlignment="Top" Width="20"   RenderTransformOrigin="0.534,1.379"/>
         <TextBlock HorizontalAlignment="Left" Margin="110,4,0,0" TextWrapping="Wrap" Text="Deliminator" VerticalAlignment="Top"/>
         <TextBox x:Name="txtPrefix" HorizontalAlignment="Left" Height="23" Margin="80,1,0,0" TextWrapping="Wrap" Text="'" VerticalAlignment="Top" Width="20"    />

@@ -26,7 +26,7 @@
         </Grid.RowDefinitions>
 
 
-        <GridSplitter  Grid.Row="1"  Grid.Column="1" HorizontalAlignment="Stretch"   VerticalAlignment="Stretch" Grid.RowSpan="3"  />
+        <GridSplitter  Grid.Row="2"  Grid.Column="1" HorizontalAlignment="Stretch"   VerticalAlignment="Stretch"   Background="{StaticResource SplitterBrush}" />
         <StackPanel Orientation="Horizontal"  Grid.Row="1" Grid.Column="0" >
              <!--set A Label-->
             <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Set A" VerticalAlignment="Top"/>
@@ -49,7 +49,7 @@
         <TextBox  x:Name="txtSetB" Grid.Column="2"  Grid.Row="2" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"  Text="{Binding SetBSource}" />
 
 
-        <GridSplitter  Grid.Row="3" HorizontalAlignment="Stretch"   VerticalAlignment="Stretch" Grid.ColumnSpan="3"/>
+        <GridSplitter  Grid.Row="3" HorizontalAlignment="Stretch"   VerticalAlignment="Stretch" Grid.ColumnSpan="3" Background="{StaticResource SplitterBrush}"/>
         <TabControl   Grid.Row="4" Grid.ColumnSpan="3"  >
             <TabItem  >
                 <TabItem.Header>
@@ -109,7 +109,7 @@
         </TabControl>
 
 
-        <Button x:Name="btCompare" Content="Compare" Grid.Column="2" HorizontalAlignment="right"   VerticalAlignment="Top" Width="75"  Margin="0,4,4,0" Command="{Binding CompareAndBCommand}"  />
+        <Button x:Name="btCompare" Content="Compare" Grid.Column="2" HorizontalAlignment="right"   VerticalAlignment="Top" Width="75"  Margin="0,4,4,0" Command="{Binding CompareAndBCommand}"  Style="{StaticResource CommandButtonStyle}"/>
         
         
 
