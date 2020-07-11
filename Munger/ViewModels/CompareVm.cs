@@ -2,10 +2,12 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using Munger.Annotations;
 using Munger.Extensions;
-using Munger.Transforms;
+using Munger.Properties;
 using Prism.Commands;
+using TextProcessing;
+using TextProcessing.Extensions;
+using TextProcessing.Transforms;
 
 namespace Munger.ViewModels
 {

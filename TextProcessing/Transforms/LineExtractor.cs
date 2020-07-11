@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace Munger.Transforms
+namespace TextProcessing.Transforms
 {
  public   class LineExtractor:StringTransform
     {

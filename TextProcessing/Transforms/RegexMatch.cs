@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace Munger.Transforms
+namespace TextProcessing.Transforms
 {
     public class RegexMatch : StringTransform
     {

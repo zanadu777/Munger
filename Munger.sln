@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Munger", "Munger\Munger.csproj", "{080D5257-E7AF-4618-AE9E-AAC2FC19D1D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MungerTests", "MungerTests\MungerTests.csproj", "{60C8C252-8264-45A5-985B-9967C426492A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextProcessing", "TextProcessing\TextProcessing.csproj", "{08C9379A-5744-47E9-A81B-CF7A72A340D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{60C8C252-8264-45A5-985B-9967C426492A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60C8C252-8264-45A5-985B-9967C426492A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60C8C252-8264-45A5-985B-9967C426492A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08C9379A-5744-47E9-A81B-CF7A72A340D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C9379A-5744-47E9-A81B-CF7A72A340D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C9379A-5744-47E9-A81B-CF7A72A340D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C9379A-5744-47E9-A81B-CF7A72A340D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

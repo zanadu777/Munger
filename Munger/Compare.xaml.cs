@@ -2,8 +2,10 @@
 using System.Windows;
 using System.Windows.Controls;
 using Munger.Extensions;
-using Munger.Transforms;
 using Munger.ViewModels;
+using TextProcessing;
+using TextProcessing.Extensions;
+using TextProcessing.Transforms;
 
 namespace Munger
 {

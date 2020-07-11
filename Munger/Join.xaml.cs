@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using Munger.Extensions;
-using Munger.Transforms;
+using TextProcessing;
+using TextProcessing.Extensions;
+using TextProcessing.Transforms;
 
 namespace Munger
 {
@@ -24,7 +27,7 @@ namespace Munger
             var transforms = new List<StringTransform>();
             transforms.Add(new LineExtractor());
             transforms.Add(new RemoveEmpty());
-            if (!string.IsNullOrWhiteSpace(txtRegex.Text))
+            if (IsRegexProcessingUsed())
             {
                 var rxMatch = new RegexMatch();
                 rxMatch.RegexString = txtRegex.Text.Trim();
@@ -41,10 +44,6 @@ namespace Munger
                 transforms.Add(rxMatch);
             }
 
-
-
-
-
             transforms.Add(new Trim());
 
             var items = transforms.Transform(txtSource.Text);
@@ -55,7 +54,7 @@ namespace Munger
             if (perLine.HasValue && perLine.Value > 0)
             {
                 var bins = items.ToBins(perLine.Value);
-                var  sb = new StringBuilder();
+                var sb = new StringBuilder();
                 foreach (var bin in bins)
                 {
                     var text = StringJoin(bin, txtPrefix.Text, txtItemDelimiter.Text, txtSuffix.Text);
@@ -69,10 +68,6 @@ namespace Munger
                 var text = StringJoin(items, txtPrefix.Text, txtItemDelimiter.Text, txtSuffix.Text);
                 txtResults.Text = text;
             }
-
-
-
-
         }
 
         private string StringJoin(IEnumerable<string> enumerable, string itemprefix, string itemdelimiter, string itemSuffix)
@@ -101,6 +96,21 @@ namespace Munger
             return intVal;
         }
 
+        private bool IsRegexProcessingUsed()
+        {
+            return txtRegexGroup.IsEnabled &&  !string.IsNullOrWhiteSpace(txtRegexGroup.Text);
+        }
 
+        private void chkRegex_Checked(object sender, RoutedEventArgs e)
+        {
+            txtRegex.IsEnabled = true;
+            txtRegexGroup.IsEnabled = true;
+        }
+
+        private void chkRegex_Unchecked(object sender, RoutedEventArgs e)
+        {
+            txtRegex.IsEnabled = false;
+            txtRegexGroup.IsEnabled = false;
+        }
     }
 }
